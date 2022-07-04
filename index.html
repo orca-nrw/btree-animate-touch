@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>B-Baum-Animation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="main-header">
+    <span id="btreeInformation">
+        Eine Weiterentwicklung des <a href="https://github.com/EILD-nrw/b-tree">B-Baum-Zeichners</a> der TH Köln <br>
+        V.05-2022
+    </span>
+    <h1>B-Baum-Animation</h1>
+</header>
+<div class="form" id="firstRowInput">
+    <div>
+        <div class="form-inputs">
+            <span class="tooltip">
+                <input type="text" id="treeInputInsert" maxlength="8">
+                <span class="tooltiptext" id="tooltipInsertfield" style="width: 160px; left: 10px; bottom: 175%">Hier Wert eingeben</span>
+            </span>
+            <span class="tooltip">
+                <button type="button" id="submitInsert">Einfügen</button>
+                <span class="tooltiptext" id="tooltipInsert">Wert einfügen</span>
+            </span>
+            <span class="tooltip">
+                <button type="button" id="submitDelete">Löschen</button>
+                 <span class="tooltiptext" id="tooltipDelete">Wert löschen</span>
+            </span>
+            <span class="tooltip">
+                <button type="button" id="animationPause">||</button>
+                <span class="tooltiptext" id="tooltipPauseAnimation" >Animation pausieren</span>
+            </span>
+            <span class="tooltip">
+                <button type="button" id="submitUndo">Rückgängig</button>
+                 <span class="tooltiptext" id="tooltipUndo" style="width: 260px">Letzten Schritt rückgängig machen</span>
+            </span>
+            <button type="button" id="submitReset">Baum löschen</button>
+            <button type="button" id="importButton">Import</button>
+            <button type="button" id="helpButton">Weitere Informationen</button>
+        </div>
+        <form class="form-radio">
+
+            <span class="tooltip">
+                <label for="treeInputInsert"></label>
+                <label style="font-weight: bold">Typ des Baumes:</label>
+                <span class="tooltiptext" style="width: 325px; left: -5px; bottom: 140%"> Gibt die Anzahl an Elementen pro Knoten an</span>
+            </span>
+            <span class="tooltip">
+                <input type="radio" id="treeType1" checked="checked" value="1" name="treeType">
+                <label for="treeType1">1</label>
+                <span class="tooltiptext" id="tooltipRadio"> 2 Elemente pro Knoten</span>
+            </span>
+            <span class="tooltip">
+                <input type="radio" id="treeType2" value="2" name="treeType">
+                <label for="treeType2">2</label>
+                <span class="tooltiptext" id="tooltipRadio"> 4 Elemente pro Knoten</span>
+            </span>
+            <span class="tooltip">
+                <input type="radio" id="treeType3" value="3" name="treeType">
+                <label for="treeType3">3</label>
+                <span class="tooltiptext" id="tooltipRadio"> 6 Elemente pro Knoten</span>
+            </span>
+            <span class="tooltip">
+                <input type="radio" id="treeType4" value="4" name="treeType">
+                <label for="treeType4">4</label>
+                <span class="tooltiptext" id="tooltipRadio"> 8 Elemente pro Knoten</span>
+            </span>
+            <span class="tooltip">
+                <input type="radio" id="treeType5" value="5" name="treeType">
+                <label for="treeType5">5</label>
+                <span class="tooltiptext" id="tooltipRadio"> 10 Elemente pro Knoten</span>
+            </span>
+
+                <button type="button" id="changeType" style="margin-left: 10px">Ändern</button>
+        </form>
+    </div>
+    <div class="form-animation">
+
+        <div id="sliderDiv" class ="tooltip">
+
+                <input type="checkbox" class="checkbox" id="animationCheckbox" checked>
+                <label id="animationsgeschwindigkeit" for="animationCheckbox">Animation: an</label>
+
+                <input class="slider" type="range" min="1" max="13" value="7" step="2" id="animationsgeschwindigkeitslider">
+                <span class="tooltiptext" id="tooltipAnimation" style="width: 200px; bottom:100%; left:50px">Animation konfigurieren</span>
+        </div>
+
+    </div>
+
+</div>
+<div id="importModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times</span>
+        <p>Import</p>
+
+        <input type="radio" id="numbersExample" checked="checked" value="numbers" name="treeType">
+        <label for="numbersExample">Zahlen-Beispiel: 1, 3, 5, 7, 19, 17, 15, 13, 11, 9 </label><br>
+        <input type="radio" id="wordsExample"  value="words" name="treeType">
+        <label for="wordsExample">Wort-Beispiel:  Koch, Wolf, Klein, Braun, Jung  </label><br>
+        <input type="radio" id="ownExample" value="own" name="treeType">
+        <label for="ownExample">Eigene Datei: </label>
+        <input id="btreeUpload" disabled="true" type="file">
+        <button type="button" id="drawFromFile">Zeichne Baum</button>
+    </div>
+</div>
+
+<canvas id="canvaswindow"></canvas>
+<script src="js/btree.js"></script>
+<script src="js/canvas.js"></script>
+<table>
+    <tr><td>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img alt="Creative Commons License" style="border-width:0; height: 50px" src="logos/licence-logo.png" />
+        </a><br>
+        This work is licensed under a <br>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </td>
+    <td>
+        <img src="logos/EILD-Logo.png" alt="EILD-Logo"/>
+    </td>
+    <td>
+        <img src="logos/eBusiness-Logo.png" alt="eBusiness-Logo" />
+    </td>
+    <td>
+        <img src="logos/HSD-Logo.jpeg" alt="HSD-Logo"/>
+    </td>
+    <td>
+        <img src="logos/DH-NRW-Logos.png" alt="DH-NRW-Logo" style="float:right" />
+    </td>
+<br>
+    </tr>
+
+</table>
+</body>
+</html>

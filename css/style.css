@@ -1,0 +1,228 @@
+@font-face {
+	font-family: Roboto, sans-serif;
+	src: url(roboto_regular.ttf);
+}
+
+*{
+	box-sizing: border-box;
+}
+
+html {
+	background-color: #006699;
+	font-family: Roboto, sans-serif;
+}
+
+body{
+	margin: 0;
+	line-height: 1.6em;
+	font-size: 16px;
+}
+
+.main-header{
+	background-color: #00324c;
+	color: #f1f2f6;
+	padding: 1px;
+	border-bottom: 3px solid black;
+}
+
+.main-header h1{
+	margin-left: 1em;
+}
+
+.form{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 2em 0 2em;
+}
+
+.form-radio{
+	margin-top: 0.5em;
+	color: #fff;
+
+}
+
+.form-animation{
+	display: flex;
+	align-items: flex-start;
+}
+
+p{
+	font-weight: bold;
+}
+
+input[type="text"]{
+	padding: 8px;
+}
+
+.slider {
+	margin-top: 10px;
+	-webkit-appearance: none;
+	width: 100%;
+	height: 35px;
+	background: #98c1d5;
+	outline: 2px solid black;
+	border-radius: 3px;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+#sliderDiv{
+	width: 300px;
+	text-align: center;
+}
+
+#tooltipRadio{
+	width: 180px;
+	bottom:140%;
+	left:-70px
+}
+
+#tooltipDelete, #tooltipInsert, #tooltipPauseAnimation {
+	width: 160px;
+	bottom: 175%;
+	left: -20%;
+}
+
+img {
+	height: 100px;
+}
+#btreeInformation {
+	float:right;
+	margin-top: 10px;
+	text-align: right;
+	margin-right: 10px;
+	color: #006699;
+}
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 35px;
+	width: 35px;
+	background: #00324c;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	height: 35px;
+	width: 35px;
+	background: #00324c;
+	cursor: pointer;
+}
+
+button{
+	background-color: #336633;
+	color: #fff;
+	padding:10px 15px;
+	border: 2px solid black;
+	cursor: pointer;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+#treeInputInsert {
+	padding:10px 15px;
+	background-color: #98c1d5;
+	border: 2px solid black;
+	border-radius: 3px;
+}
+canvas {
+	display:flex;
+}
+
+#firstRowInput {
+	padding-top: 1.5em;
+	padding-bottom: 0.5em;
+}
+
+#animationsgeschwindigkeit{
+	display: inline-block;
+	color: #fff;
+	font-weight: bold;
+}
+
+#importButton{
+	margin-left: 20px;
+}
+
+a:link, a:visited{
+	color: #006699;
+}
+
+a:hover {
+	color: #336633;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	accent-color: #00324c;
+}
+
+.tooltip {
+	position: relative;
+	/*display: inline-block;*/
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	background-color: rgba(205, 238, 253, 0.9);
+	color: #000;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+	bottom: 160%;
+	left: -15%;
+	margin: auto;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+	background-color: #98c1d5;
+	margin: 15% auto;
+	padding: 20px;
+	border: 2px solid black;
+	width: 400px;
+}
+
+.close-button {
+	color: #00324c;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+	color: #336633;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+table{
+	padding-left: 10px;
+	background-color: #fff;
+	height: 115px;
+	margin-top: -30px;
+	width:100%;
+}
