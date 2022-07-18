@@ -15,29 +15,30 @@ html {
 body{
 	margin: 0;
 	line-height: 1.6em;
-	font-size: 16px;
+	font-size: 30px;
 }
 
 .main-header{
 	background-color: #00324c;
 	color: #f1f2f6;
 	padding: 1px;
-	border-bottom: 3px solid black;
+	border-bottom: 8px solid black;
 }
 
 .main-header h1{
 	margin-left: 1em;
+	font-size: 50px;
 }
 
 .form{
 	display: flex;
 	justify-content: space-between;
 	padding: 0 2em 0 2em;
+	color: #fff;
 }
 
 .form-radio{
 	margin-top: 0.5em;
-	color: #fff;
 
 }
 
@@ -58,9 +59,9 @@ input[type="text"]{
 	margin-top: 10px;
 	-webkit-appearance: none;
 	width: 100%;
-	height: 35px;
+	height: 60px;
 	background: #98c1d5;
-	outline: 2px solid black;
+	outline: 5px solid black;
 	border-radius: 3px;
 	-webkit-transition: .2s;
 	transition: opacity .2s;
@@ -71,26 +72,15 @@ input[type="text"]{
 }
 
 #sliderDiv{
-	width: 300px;
+	width: 600px;
 	text-align: center;
 }
 
-#tooltipRadio{
-	width: 180px;
-	bottom:140%;
-	left:-70px
-}
-
-#tooltipDelete, #tooltipInsert, #tooltipPauseAnimation {
-	width: 160px;
-	bottom: 175%;
-	left: -20%;
-}
-
 img {
-	height: 100px;
+	height: 200px;
 }
 #btreeInformation {
+	font-size: 30px;
 	float:right;
 	margin-top: 10px;
 	text-align: right;
@@ -100,27 +90,26 @@ img {
 .slider::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	appearance: none;
-	height: 35px;
-	width: 35px;
+	height: 60px;
+	width: 60px;
 	background: #00324c;
-	cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-	height: 35px;
-	width: 35px;
+	height: 60px;
+	width: 60px;
 	background: #00324c;
-	cursor: pointer;
 }
 
 button{
 	background-color: #336633;
 	color: #fff;
-	padding:10px 15px;
-	border: 2px solid black;
+	padding:20px 30px;
+	border: 5px solid black;
 	cursor: pointer;
-	border-radius: 3px;
+	border-radius: 7px;
 	font-weight: bold;
+	font-size: 25px;
 }
 
 #treeInputInsert {
@@ -129,12 +118,13 @@ button{
 	border: 2px solid black;
 	border-radius: 3px;
 }
+
 canvas {
 	display:flex;
 }
 
 #firstRowInput {
-	padding-top: 1.5em;
+	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 }
 
@@ -148,41 +138,9 @@ canvas {
 	margin-left: 20px;
 }
 
-a:link, a:visited{
-	color: #006699;
-}
-
-a:hover {
-	color: #336633;
-}
-
 input[type="radio"], input[type="checkbox"] {
 	accent-color: #00324c;
-}
-
-.tooltip {
-	position: relative;
-	/*display: inline-block;*/
-}
-
-.tooltip .tooltiptext {
-	visibility: hidden;
-	background-color: rgba(205, 238, 253, 0.9);
-	color: #000;
-	text-align: center;
-	border-radius: 6px;
-	padding: 5px 0;
-
-	/* Position the tooltip */
-	position: absolute;
-	z-index: 1;
-	bottom: 160%;
-	left: -15%;
-	margin: auto;
-}
-
-.tooltip:hover .tooltiptext {
-	visibility: visible;
+	transform: scale(2);
 }
 
 .modal {
@@ -212,17 +170,10 @@ input[type="radio"], input[type="checkbox"] {
 	font-weight: bold;
 }
 
-.close-button:hover,
-.close-button:focus {
-	color: #336633;
-	text-decoration: none;
-	cursor: pointer;
-}
-
 table{
 	padding-left: 10px;
 	background-color: #fff;
-	height: 115px;
+	height: 200px;
 	margin-top: -30px;
 	width:100%;
 }

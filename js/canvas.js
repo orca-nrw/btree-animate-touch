@@ -48,7 +48,7 @@ let explanationBoxHeight = canvas.height - 20;
 let explanationText = "Default";
 let explanationTextX = 20;
 let explanationTextY = 100;
-let explanationTextLineHeight = 25;
+let explanationTextLineHeight = 50;
 let explanationTextWidth = explanationBoxWidth * 0.95;
 
 // Create Tree Object
@@ -306,7 +306,7 @@ closeModal.onclick = function (){
 
 
 helpButton.addEventListener("click",function(){
-	calculateWrapTextAndDraw(expHelp, explanationTextX , explanationTextY, explanationTextWidth * 1.5, explanationTextLineHeight, "black");
+	calculateWrapTextAndDraw(expHelp, explanationTextX , explanationTextY, explanationTextWidth, explanationTextLineHeight, "black");
 });
 
 window.onclick = function(event){
@@ -1716,7 +1716,7 @@ function getBTree(yValue){
 
 function calculateWrapTextAndDraw(text, x, y, width, lineHeight, fillStyle) {
 	c.clearRect(11, 11, width, explanationBoxHeight);
-	c.font = "16px Roboto";
+	c.font = "40px Roboto";
 	c.fillStyle = "#98c1d5";
 	c.fillRect(explanationBoxX, explanationBoxY, width + 10, explanationBoxHeight);
 	c.strokeRect(11,11, width + 10, explanationBoxHeight);
@@ -1746,10 +1746,10 @@ function calculateWrapTextAndDraw(text, x, y, width, lineHeight, fillStyle) {
 
 function calculateExplanationBoxWidth(){
 	if (canvas.width * 0.3 > 400){
-		if (canvas.width * 0.3 < 500){
+		if (canvas.width * 0.3 < 1000){
 			explanationBoxWidth = canvas.width * 0.3;
 		} else {
-			explanationBoxWidth = 500;
+			explanationBoxWidth = 1000;
 		}
 	} else {
 		explanationBoxWidth = 400;

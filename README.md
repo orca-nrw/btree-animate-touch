@@ -1,11 +1,12 @@
 ![EILD-Logo](logos/EILD-Logo.png)
 
-# B-Baum-Animator
+# B-Baum-Animator (Touch)
 
 Der B-Baum-Animator dient zum Verständnis von Einfüge- und Löschprozessen in B-Bäumen. Die Anwendung basiert auf dem [B-Baum-Zeichner](https://github.com/EILD-nrw/b-tree) der [Technischen Hochschule Köln](https://www.th-koeln.de/) und wurde nun als Teil des EILD.nrw Projektes von der [Hochschule Düsseldorf](https://www.hs-duesseldorf.de/) mit Animationen ergänzt und als Open-Source Anwendung veröffentlicht.
 
 In EILD wird ein Ansatz mit weitgehender Adaptierbarkeit und Wiederverwendbarkeit der Lehrinhalte umgesetzt.
 
+Diese Version ist darauf ausgelegt, auf einem großen Touchscreen-Bildschirm bedient zu werden.
 ## Further information
 - [EILD.nrw Informationen](https://medien.hs-duesseldorf.de/personen/rakow/Seiten/09062020_EILD.aspx?RootFolder=%2Fpersonen%2Frakow%2FPublishingImages%2FMeldungen&FolderCTID=0x0120004A9137CD4CD45345B9F581109987E838&View=%7BC6A3F1CE-FF3B-4025-A149-D6A910C2E30B%7D#:~:text=NRW%20zur%20Erstellung%20von%20offenen,schafft%20sich%20ihre%20Werkzeuge%20selbst.)
 - [EILD.nrw GitHub](https://github.com/EILD-nrw)
