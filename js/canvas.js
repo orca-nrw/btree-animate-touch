@@ -1,5 +1,4 @@
 
-let textFieldInput = document.getElementById("treeInputInsert");
 let inputButton = document.getElementById("submitInsert");
 let inputDeleteButton = document.getElementById("submitDelete");
 let undoButton = document.getElementById("submitUndo");
@@ -31,8 +30,8 @@ canvas.width = window.innerWidth;
 let c = canvas.getContext('2d');
 
 // Rectangle dimensions
-let rectangleWidth = 55;
-let rectangleHeight = 24;
+let rectangleWidth = 100;
+let rectangleHeight = 50;
 
 // Font size and design
 c.font = "16px Roboto";
@@ -46,8 +45,8 @@ let explanationBoxWidth;
 calculateExplanationBoxWidth();
 let explanationBoxHeight = canvas.height - 20;
 let explanationText = "Default";
-let explanationTextX = 20;
-let explanationTextY = 100;
+let explanationTextX = 40;
+let explanationTextY = 200;
 let explanationTextLineHeight = 50;
 let explanationTextWidth = explanationBoxWidth * 0.95;
 
@@ -91,6 +90,10 @@ let uploadValues = [];
 let swappedValue;
 let updatedNodes = [];
 let insertedValues = [];
+let valueType = "number";
+let letters = ["A", "B", "C", "D"];
+let xCentral = canvas.width / 3 - 100 / 2;
+let space = 100;
 numbersExampleRadio.checked = true;
 fileUpload.value = "";
 fileUpload.disabled = true;
@@ -155,12 +158,26 @@ inputButton.addEventListener('click', function(){
 });
 
 function insertValue(){
-	let input = textFieldInput.value;
-	if (inputButton.textContent == ">"){
+	if (inputButton.textContent == "Nächster Schritt"){
 		resumeAnimation();
 	} else {
-		inputInsert(input);
+		inputInsert(randomValue(valueType));
 	}
+}
+
+function randomValue(type){
+	let value = "";
+	if (type == "number"){
+		value += Math.floor(Math.random() * 100);
+	} else {
+		value += letters[Math.floor(Math.random() * letters.length)];
+	}
+	for (let i = 0; i < insertedValues.length; i++){
+		if (value == insertedValues[i]){
+			value = randomValue(type);
+		}
+	}
+	return value;
 }
 
 inputDeleteButton.addEventListener('click', function(){
@@ -168,8 +185,7 @@ inputDeleteButton.addEventListener('click', function(){
 });
 
 function deleteValue(){
-	let input = textFieldInput.value;
-	if (inputDeleteButton.textContent == ">"){
+	if (inputDeleteButton.textContent == "Nächster Schritt"){
 		resumeAnimation();
 	} else {
 		inputDelete(input);
@@ -355,10 +371,8 @@ function pauseAnimation(){
 
 function changeButtonsToStart(){
 	activateAllButtons();
-	inputButton.textContent = "Einfügen";
-	inputDeleteButton.textContent = "Löschen";
-	insertTooltip.innerHTML = "Wert einfügen";
-	deleteTooltip.innerHTML = "Wert löschen";
+	inputButton.textContent = "Zufälligen Wert Einfügen";
+	inputDeleteButton.textContent = "Zufälligen Wert Löschen";
 }
 
 function resumeAnimation(){
@@ -1027,7 +1041,7 @@ function inputInsert(inputInsertValue){
 				getBTree(y);
 				drawRectangle(explanationBoxWidth / 2 - rectangleWidth / 2,y,rectangleWidth,rectangleHeight,input, pastelBlue);
 				pauseAnimation();
-				inputButton.textContent = ">";
+				inputButton.textContent = "Nächster Schritt";
 				deactivateAllButtons("insert");
 				insertTooltip.innerHTML = "Animation fortsetzen";
 			}else{
@@ -1045,7 +1059,6 @@ function inputInsert(inputInsertValue){
 			"Setzen Sie den Baum zurück, falls Sie die Art an Eingabewerte ändern wollen.";
 		calculateWrapTextAndDraw(explanationText, explanationTextX, explanationTextY , explanationTextWidth, explanationTextLineHeight, "red");
 	}
-	textFieldInput.value = "";
 }
 
 function resetAnimationStepVariables(){
@@ -1093,9 +1106,8 @@ function inputDelete(inputDeleteValue){
 			isDeleting = true;
 			getBTree(y);
 			pauseAnimation();
-			inputDeleteButton.textContent = ">";
+			inputDeleteButton.textContent = "Nächster Schritt";
 			deactivateAllButtons("delete");
-			deleteTooltip.innerHTML = "Animation fortsetzen";
 		}else{
 			explanationText = expAnimationDeactivated;
 			drawnTree = [];
@@ -1113,7 +1125,6 @@ function inputDelete(inputDeleteValue){
 			calculateWrapTextAndDraw(findInputError(deleteValue, tree), explanationTextX, explanationTextY , explanationTextWidth, explanationTextLineHeight, "red");
 		}
 	}
-	textFieldInput.value = "";
 }
 
 function findInputError(value, tree){
@@ -1503,7 +1514,7 @@ function drawRectangle(x,y,width,height,key, color){
 	c.strokeRect(x, y, width, height);
 	c.fillStyle = 'rgba(0, 0, 0, 1)';
 	let xText = x + width / 2 - c.measureText(key).width / 2;
-	let yText = y + height / 2 + lineHeight / 2;
+	let yText = y + 5 + height / 2 + lineHeight / 2;
 	c.fillText(key, xText, yText);
 }
 
@@ -1523,7 +1534,6 @@ function resetTree(){
 	tempLineCoordinatesXY = [];
 	tempTree = [];
 	tree = new Tree(treeType);
-	textFieldInput.value = "";
 	isNumberTree = null;
 }
 
@@ -1539,8 +1549,6 @@ function checkIfTreeIsDrawnCompletely(tree){
 	return true;
 }
 
-let xCentral = canvas.width / 3 - 100 / 2;
-let space = 10;
 
 function checkIfNodeIsInArray(tree,key){
 	for(let i=0; i < tree.length; i++){
