@@ -25,8 +25,8 @@ let animationTooltip = document.getElementById('tooltipAnimation');
 // set up canvas
 let canvas = document.querySelector('canvas');
 canvas.style.backgroundColor = 'white';
-canvas.height = window.innerHeight - 315 - 200;
-canvas.width = window.innerWidth - 80;
+canvas.height = window.innerHeight - 315 - 250;
+canvas.width = window.innerWidth - 60;
 let c = canvas.getContext('2d');
 
 // Rectangle dimensions
@@ -1721,7 +1721,7 @@ function getBTree(yValue){
 
 function calculateWrapTextAndDraw(text, x, y, width, lineHeight, fillStyle) {
 	c.clearRect(11, 11, width, explanationBoxHeight);
-	c.font = "40px Roboto";
+	c.font = "35px Roboto";
 	c.fillStyle = "#98c1d5";
 	c.fillRect(explanationBoxX, explanationBoxY, width + 10, explanationBoxHeight);
 	c.strokeRect(11,11, width + 10, explanationBoxHeight);
