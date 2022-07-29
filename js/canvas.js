@@ -25,8 +25,8 @@ let animationTooltip = document.getElementById('tooltipAnimation');
 // set up canvas
 let canvas = document.querySelector('canvas');
 canvas.style.backgroundColor = 'white';
-canvas.height = window.innerHeight - 315 - 150;
-canvas.width = window.innerWidth - 100;
+canvas.height = window.innerHeight - 315 - 200;
+canvas.width = window.innerWidth - 80;
 let c = canvas.getContext('2d');
 
 // Rectangle dimensions
