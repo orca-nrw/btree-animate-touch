@@ -25,8 +25,8 @@ let animationTooltip = document.getElementById('tooltipAnimation');
 // set up canvas
 let canvas = document.querySelector('canvas');
 canvas.style.backgroundColor = 'white';
-canvas.height = window.innerHeight - 315;
-canvas.width = window.innerWidth;
+canvas.height = window.innerHeight - 315 - 150;
+canvas.width = window.innerWidth - 100;
 let c = canvas.getContext('2d');
 
 // Rectangle dimensions
@@ -107,10 +107,7 @@ const expInit = "Herzlich willkommen beim B-Baum-Animator! <br> <br> " +
 const expHelp = "Die Anwendung soll die Schritte beim Aufbau eines B-Baums visualisieren. " +
 	"Dabei wird jeder Schritt einzeln animiert und erklärt. " +
 	"Die Animation können Sie über die Bedienelemente rechts konfigurieren. <br> <br> " +
-	"Über den 'Import'-Button können Sie einen Baum als txt-Datei importieren: " +
-	"Dabei müssen die einzugebenden Werte mit Komma separiert eingetragen sein. " +
-	"Um ein Element zu löschen, muss es mit einem - versehen sein. " +
-	"Ein gültiges Beispiel wäre: 3, 2, 7, 9, 10, -7, -10, -3, 5 <br> <br> " +
+	"In dieser Version können lediglich zufällige Werte eingefügt und gelöscht werden <br> " +
 	"Eine korrekte Einordnung der Elemente kann bei einem Baum des Typs 1 für die Tiefe 5 (bei Zahlen) bzw. 4 (bei Wörtern) garantiert werden. " +
 	"Bei größeren Typen verringert sich diese Tiefe. <br> <br> " +
 	"Bei der Eingabe von Umlauten werden diese in ihre äquivalente Form nach DIN 5007 Variante 2 zur Sortierung von Namenslisten umgewandelt (z.B. Ä zu AE). " +
@@ -134,7 +131,7 @@ const green = "rgba(89, 178, 89,1)";
 const pastelGreen = "rgba(89, 178, 89,0.5)";
 const red = "rgba(255, 0, 0,0.5)";
 const blue = "rgba(0, 117, 175,1)";
-const pastelBlue = "rgba(0, 117, 175,0.5)";
+const pastelBlue = "rgba(0, 117, 175,0.25)";
 const yellow = "rgba(255, 255, 0,0.5)";
 
 window.onbeforeunload = function(e) {
