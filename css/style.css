@@ -140,7 +140,8 @@ canvas {
 
 input[type="radio"], input[type="checkbox"] {
 	accent-color: #00324c;
-	transform: scale(2);
+	transform: scale(2.5);
+	margin: 10px;
 }
 
 .modal {

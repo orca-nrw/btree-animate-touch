@@ -7,16 +7,9 @@ let radiosTreeType = document.getElementsByName("treeType");
 let changeTypeButton = document.getElementById("changeType");
 let animationPauseButton = document.getElementById("animationPause");
 let animationSpeedSlider = document.getElementById("animationsgeschwindigkeitslider");
-let modal = document.getElementById("importModal");
-let importButton = document.getElementById("importButton");
 let helpButton = document.getElementById("helpButton");
-let closeModal = document.getElementsByClassName("close-button")[0];
 let animationsgeschwindigkeit = document.getElementById("animationsgeschwindigkeit");
 let animationCheckbox = document.getElementById("animationCheckbox");
-let numbersExampleRadio = document.getElementById("numbersExample");
-let wordsExampleRadio = document.getElementById("wordsExample");
-let ownExampleRadio = document.getElementById("ownExample");
-let fileUpload = document.getElementById('btreeUpload');
 let drawTreeFromUploadButton = document.getElementById('drawFromFile');
 let insertTooltip = document.getElementById('tooltipInsert');
 let deleteTooltip = document.getElementById('tooltipDelete');
@@ -94,9 +87,6 @@ let valueType = "number";
 let letters = ["A", "B", "C", "D"];
 let xCentral = canvas.width / 3 - 100 / 2;
 let space = 100;
-numbersExampleRadio.checked = true;
-fileUpload.value = "";
-fileUpload.disabled = true;
 
 const expInit = "Herzlich willkommen beim B-Baum-Animator! <br> <br> " +
 	"Diese Animation dient dazu, die Vorgehensweise beim geordneten Einfügen und Löschen von Werten im B-Baum darzustellen. <br> <br> " +
@@ -131,7 +121,7 @@ const green = "rgba(89, 178, 89,1)";
 const pastelGreen = "rgba(89, 178, 89,0.5)";
 const red = "rgba(255, 0, 0,0.5)";
 const blue = "rgba(0, 117, 175,1)";
-const pastelBlue = "rgba(0, 117, 175,0.25)";
+const pastelBlue = "rgba(0, 117, 175,0.35)";
 const yellow = "rgba(255, 255, 0,0.5)";
 
 window.onbeforeunload = function(e) {
@@ -231,50 +221,6 @@ animationPauseButton.addEventListener("click", function(){
 	pauseAnimation();
 });
 
-fileUpload.addEventListener("change",function(event){
-	activateButton(drawTreeFromUploadButton);
-	let reader = new FileReader();
-	reader.onload=function(){
-		btreeValuesFromUpload=reader.result;
-	}
-	reader.readAsText(this.files[0]);
-
-});
-
-numbersExampleRadio.addEventListener("click", function(){
-	fileUpload.disabled = true;
-	activateButton(drawTreeFromUploadButton);
-});
-
-wordsExampleRadio.addEventListener("click", function(){
-	fileUpload.disabled = true;
-	activateButton(drawTreeFromUploadButton);
-});
-
-ownExampleRadio.addEventListener("click", function(){
-	fileUpload.disabled = false;
-	if (fileUpload.files[0] != ""){
-		activateButton(drawTreeFromUploadButton);
-	} else {
-		deactivateButton(drawTreeFromUploadButton);
-	}
-});
-
-drawTreeFromUploadButton.addEventListener("click", function() {
-	if (confirm("Um den Import zu beginnen, wird der aktuelle Baum gelöscht.")){
-		modal.style.display = "none";
-		resetTree();
-		if (numbersExampleRadio.checked){
-			uploadValues = ["1", "3", "5", "7", "19", "17", "15", "13", "11", "9"];
-		} else if (wordsExampleRadio.checked){
-			uploadValues = ["Koch", "Wolf", "Klein", "Braun", "Jung"];
-		} else {
-			uploadValues = btreeValuesFromUpload.split(',');
-		}
-		drawTreeFromUpload();
-	}
-});
-
 animationSpeedSlider.addEventListener("change", function(){
 	speed = parseInt(animationSpeedSlider.value);
 	if(speed === 1){
@@ -307,15 +253,6 @@ animationCheckbox.addEventListener("change", function(){
 		animationTooltip.innerHTML = "Animation deaktivieren";
 	}
 });
-
-importButton.onclick = function(){
-	modal.style.display = "block";
-}
-
-closeModal.onclick = function (){
-	modal.style.display = "none";
-}
-
 
 
 helpButton.addEventListener("click",function(){
@@ -1722,7 +1659,7 @@ function getBTree(yValue){
 function calculateWrapTextAndDraw(text, x, y, width, lineHeight, fillStyle) {
 	c.clearRect(11, 11, width, explanationBoxHeight);
 	c.font = "35px Roboto";
-	c.fillStyle = "#98c1d5";
+	c.fillStyle = pastelBlue;
 	c.fillRect(explanationBoxX, explanationBoxY, width + 10, explanationBoxHeight);
 	c.strokeRect(11,11, width + 10, explanationBoxHeight);
 	let words = text.split(' ');

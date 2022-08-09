@@ -21,7 +21,6 @@
             <button type="button" id="animationPause">||</button>
             <button type="button" id="submitUndo">Rückgängig</button>
             <button type="button" id="submitReset">Baum löschen</button>
-            <button type="button" id="importButton">Import</button>
             <button type="button" id="helpButton">Weitere Informationen</button>
         </div>
         <form class="form-radio">
@@ -57,21 +56,6 @@
 
     </div>
 
-</div>
-<div id="importModal" class="modal">
-    <div class="modal-content">
-        <span class="close-button">&times</span>
-        <p>Import</p>
-
-        <input type="radio" id="numbersExample" checked="checked" value="numbers" name="treeType">
-        <label for="numbersExample">Zahlen-Beispiel: 1, 3, 5, 7, 19, 17, 15, 13, 11, 9 </label><br>
-        <input type="radio" id="wordsExample"  value="words" name="treeType">
-        <label for="wordsExample">Wort-Beispiel:  Koch, Wolf, Klein, Braun, Jung  </label><br>
-        <input type="radio" id="ownExample" value="own" name="treeType">
-        <label for="ownExample">Eigene Datei: </label>
-        <input id="btreeUpload" disabled="true" type="file">
-        <button type="button" id="drawFromFile">Zeichne Baum</button>
-    </div>
 </div>
 
 <canvas id="canvaswindow"></canvas>
