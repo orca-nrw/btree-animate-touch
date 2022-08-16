@@ -4,6 +4,7 @@ let inputDeleteButton = document.getElementById("submitDelete");
 let undoButton = document.getElementById("submitUndo");
 let resetButton = document.getElementById("submitReset");
 let radiosTreeType = document.getElementsByName("treeType");
+let radiosInputType = document.getElementsByName("inputType");
 let changeTypeButton = document.getElementById("changeType");
 let animationPauseButton = document.getElementById("animationPause");
 let animationSpeedSlider = document.getElementById("animationsgeschwindigkeitslider");
@@ -11,8 +12,6 @@ let helpButton = document.getElementById("helpButton");
 let animationsgeschwindigkeit = document.getElementById("animationsgeschwindigkeit");
 let animationCheckbox = document.getElementById("animationCheckbox");
 let drawTreeFromUploadButton = document.getElementById('drawFromFile');
-let insertTooltip = document.getElementById('tooltipInsert');
-let deleteTooltip = document.getElementById('tooltipDelete');
 let animationTooltip = document.getElementById('tooltipAnimation');
 
 // set up canvas
@@ -83,8 +82,11 @@ let uploadValues = [];
 let swappedValue;
 let updatedNodes = [];
 let insertedValues = [];
-let valueType = "number";
-let letters = ["A", "B", "C", "D"];
+let deletableValues = [];
+document.getElementById("treeType1").checked="checked";
+document.getElementById("inputTypeNumbers").checked="checked";
+let inputType = "number";
+let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 let xCentral = canvas.width / 3 - 100 / 2;
 let space = 100;
 
@@ -148,7 +150,7 @@ function insertValue(){
 	if (inputButton.textContent == "Nächster Schritt"){
 		resumeAnimation();
 	} else {
-		inputInsert(randomValue(valueType));
+		inputInsert(randomValue(inputType));
 	}
 }
 
@@ -175,19 +177,21 @@ function deleteValue(){
 	if (inputDeleteButton.textContent == "Nächster Schritt"){
 		resumeAnimation();
 	} else {
-		inputDelete(input);
+		let deletedValue = deletableValues[Math.floor(Math.random() * deletableValues.length)]
+		inputDelete(deletedValue);
 	}
 }
 
 undoButton.addEventListener('click', function(){
 	undoStep();
 });
+
 function undoStep(){
-	insertedValues.pop();
+	//TODO deletableValues
+	insertedValues.pop()
 	let values = Object.values(insertedValues);
 	resetTree();
 	uploadValues = Object.values(values);
-	console.log("Rückgängig auf: " + uploadValues);
 	if (!isAnimationDisabled){
 		isAnimationDisabled = true;
 		drawTreeFromUpload();
@@ -210,6 +214,13 @@ changeTypeButton.addEventListener('click', function(){
 		for (const radioButton of radiosTreeType) {
 			if (radioButton.checked) {
 				treeType = parseInt(radioButton.value);
+				resetTree();
+				break;
+			}
+		}
+		for (const radioButton of radiosInputType) {
+			if (radioButton.checked) {
+				inputType = radioButton.value;
 				resetTree();
 				break;
 			}
@@ -259,11 +270,6 @@ helpButton.addEventListener("click",function(){
 	calculateWrapTextAndDraw(expHelp, explanationTextX , explanationTextY, explanationTextWidth, explanationTextLineHeight, "black");
 });
 
-window.onclick = function(event){
-	if(event.target === modal){
-		modal.style.display = "none";
-	}
-}
 
 function deactivateButton(button){
 	button.disabled = true;
@@ -926,14 +932,12 @@ function drawTreeFromUpload(){
 	}else{
 		treeIsDrawnFromUpload = false;
 		for(let i = 0; i<uploadValues.length; i++){
-			console.log("in der for-schleife");
 			if(uploadValues[i].charAt(0) == ' '){
 				uploadValues[i] = uploadValues[i].substring(1);
 			}
 			if(uploadValues[i].charAt(0) === '-'){
 				inputDelete(uploadValues[i].substring(1));
 			}else{
-				console.log("Wert einfügen: " + uploadValues[i]);
 				inputInsert(uploadValues[i]);
 			}
 		}
@@ -962,7 +966,7 @@ function inputInsert(inputInsertValue){
 				input = input.replaceAll("Ä", "AE").replaceAll("Ö", "OE").replaceAll("Ü", "UE");
 			}
 			insertedValues.push(input.toString());
-			console.log("Inserted Values insert: "+insertedValues);
+			deletableValues.push(input.toString());
 			tree.eventList = [];
 			splitcounter = 0;
 			tree.insertKey(input);
@@ -977,7 +981,6 @@ function inputInsert(inputInsertValue){
 				pauseAnimation();
 				inputButton.textContent = "Nächster Schritt";
 				deactivateAllButtons("insert");
-				insertTooltip.innerHTML = "Animation fortsetzen";
 			}else{
 				explanationText = expAnimationDeactivated;
 				drawnTree = [];
@@ -1017,7 +1020,11 @@ function inputDelete(inputDeleteValue){
 		let y = Math.round(((explanationBoxHeight) / 100) * 3);
 		c.font = "16px Roboto";
 		insertedValues.push('-' + deleteValue.toString());
-		console.log("Inserted Values Delete: " + insertedValues);
+		for (let i = 0; i < deletableValues.length; i++){
+			if (deletableValues[i] == deleteValue.toString()){
+				deletableValues.splice(i,1);
+			}
+		}
 		tree.eventList = [];
 		resetAnimationStepVariables();
 		splitcounter = 0;
@@ -1460,6 +1467,7 @@ function resetTree(){
 	drawnTree = [];
 	uploadValues = [];
 	insertedValues = [];
+	deletableValues = [];
 	rectangleWidth = 55;
 	oldTree = [];
 	isDeleting = false;
