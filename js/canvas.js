@@ -950,9 +950,6 @@ function inputInsert(inputInsertValue){
 	let input = inputInsertValue;
 	if(isNumberTree === null){
 		isNumberTree = !isNaN(parseInt(input));
-		if(!isNumberTree){
-			rectangleWidth = 105;
-		}
 	}
 	if(isNumberTree === !isNaN(parseInt(input))){
 		if(checkInput(input)){
@@ -1468,7 +1465,7 @@ function resetTree(){
 	uploadValues = [];
 	insertedValues = [];
 	deletableValues = [];
-	rectangleWidth = 55;
+	rectangleWidth = 100;
 	oldTree = [];
 	isDeleting = false;
 	lineCoordinatesXY = [];
