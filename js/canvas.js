@@ -970,7 +970,7 @@ function inputInsert(inputInsertValue){
 			isDeleting = false;
 			if(!isAnimationDisabled){
 				animationComplete = false;
-				explanationText = "Der Wert '" + input + "' wird dem Baum hinzugefügt. <br> <br> Ein Klick auf '>' führt zum nächsten Schritt der Animation."
+				explanationText = "Der Wert '" + input + "' wird dem Baum hinzugefügt. <br> <br> Ein Klick auf 'Nächster Schritt' führt zum nächsten Schritt der Animation."
 				drawTree(oldTree);
 				insertNode = null;
 				getBTree(y);
@@ -1033,7 +1033,7 @@ function inputDelete(inputDeleteValue){
 		deletedValue = deleteValue;
 		if(!isAnimationDisabled) {
 			let index = checkIfNodeIsInArray(oldTree, deleteValue)[1];
-			explanationText = "Das Element '" + deleteValue + "' wird aus dem Baum gelöscht. <br> <br> Ein Klick auf '>' führt zum nächsten Schritt der Animation.";
+			explanationText = "Das Element '" + deleteValue + "' wird aus dem Baum gelöscht. <br> <br> Ein Klick auf 'Nächster Schritt' führt zum nächsten Schritt der Animation.";
 			animationComplete = false;
 			drawTree(oldTree);
 			drawRectangle(oldTree[index].x, oldTree[index].y, rectangleWidth, rectangleHeight, deleteValue, red);
