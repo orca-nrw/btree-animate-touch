@@ -92,14 +92,14 @@ let space = 100;
 
 const expInit = "Herzlich willkommen beim B-Baum-Animator! <br> <br> " +
 	"Diese Animation dient dazu, die Vorgehensweise beim geordneten Einfügen und Löschen von Werten im B-Baum darzustellen. <br> <br> " +
-	"Geben Sie dazu den Wert in die Zeile ein und klicken auf 'Einfügen' (oder betätigen die 'Enter'-Taste), um einen Wert einzufügen. <br> <br> " +
-	"Mit einem Klick auf 'Löschen' (oder Betätigung der 'Entfernen'-Taste) können Sie einen bereits eingefügten Wert wieder entfernen. <br> <br> " +
+	"Tippen Sie dazu auf 'Zufälligen Wert Einfügen', um einen Wert einzufügen. <br> <br> " +
+	"Mit einem Tippen auf 'Zufälligen Wert Löschen' können Sie einen bereits eingefügten Wert wieder entfernen. <br> <br> " +
 	"Anschließend wird der Ablauf schrittweise animiert und erklärt.";
 
 const expHelp = "Die Anwendung soll die Schritte beim Aufbau eines B-Baums visualisieren. " +
 	"Dabei wird jeder Schritt einzeln animiert und erklärt. " +
 	"Die Animation können Sie über die Bedienelemente rechts konfigurieren. <br> <br> " +
-	"In dieser Version können lediglich zufällige Werte eingefügt und gelöscht werden <br> " +
+	"In dieser Version können lediglich zufällige Werte eingefügt und gelöscht werden. <br> " +
 	"Eine korrekte Einordnung der Elemente kann bei einem Baum des Typs 1 für die Tiefe 5 (bei Zahlen) bzw. 4 (bei Wörtern) garantiert werden. " +
 	"Bei größeren Typen verringert sich diese Tiefe. <br> <br> " +
 	"Bei der Eingabe von Umlauten werden diese in ihre äquivalente Form nach DIN 5007 Variante 2 zur Sortierung von Namenslisten umgewandelt (z.B. Ä zu AE). " +
