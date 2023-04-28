@@ -4,7 +4,7 @@
 
 Um das Verständnis für den Aufbau von B-Bäumen als Datenbankindex zu fördern, wird eine interaktive Animation zur Verfügung gestellt. Dabei können Zufallswerte bestehend aus Zahlen oder Zeichenketten generiert werden, die anschließend in einer schrittweisen Animation dem Baum hinzugefügt bzw. aus ihm entfernt werden. Zu jedem Schritt wird eine Erklärung gegeben. Der Typ des B-Baums kann angepasst werden. Vorausgesetzt werden Vorkenntnisse über die generelle Struktur von B-Bäumen. Verwendet wird die Funktionsweise nach Härder, T., Rahm, E.: Datenbanksysteme: Konzepte und Techniken der Implementierung, 2. Aufl, S.183-194. Springer-Verlag Berlin Heidelberg 1999, 2001.
 
-BTree Animate Touch ist eine Version von [BTree Animate], die dafür geeignet ist, auf einem großen Touchscreen-Bildschirm ohne Eingeabegerät wie z. B. einer Tastatur bedient zu werden.
+BTree Animate Touch ist eine Version von [BTree Animate], die dafür geeignet ist, auf einem großen Touchscreen ohne externes Gerät für Eingaben bedient zu werden.
 
 Schlagworte: Datenbanksysteme, Datenbank, Index, B-Baum, Animation
 
