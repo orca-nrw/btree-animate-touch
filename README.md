@@ -9,9 +9,10 @@ BTree Animate Touch ist eine Version von [BTree Animate], die dafür geeignet is
 Schlagworte: Datenbanksysteme, Datenbank, Index, B-Baum, Animation
 
 ## Weitere Informationen
-BTree Animate wurde im Projekt EILD.nrw weiterentwickelt. In EILD.nrw wird ein Ansatz mit weitgehender Adaptierbarkeit und Wiederverwendbarkeit der Lehrinhalte umgesetzt.
+BTree Animate wurde im Projekt EILD.nrw weiterentwickelt. In EILD.nrw wird ein Ansatz mit weitgehender Adaptierbarkeit und Wiederverwendbarkeit der Lehrinhalte umgesetzt.  Die entwickelten OER werden über ORCA.nrw zur Verfügung gestellt.
 - [EILD.nrw]
-- [EILD.nrw GitHub]
+- [ORCA.nrw]
+- [ORCA.nrw Github]
 
 ## Verwendung
 
@@ -22,14 +23,14 @@ Verwenden Sie am besten die auf GitHub bereitgestellten Version [BTree Animate T
 
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
-BTree Animate Touch ist eine von Charlotte Hasler für den Touchscreen angepasste Version von [BTree Animate]. BTree-Animate basiert auf dem B-Baum-Zeichner [BTree] der [Technischen Hochschule Köln][TH Köln], wurde an der [Hochschule Düsseldorf][HSD] von Jonas Baur im Rahmen seiner Bachelor-Arbeit mit Animationen ergänzt und im Rahmen des Projektes [EILD.nrw] von Charlotte Hasler weiterentwickelt. Dieses Repository enthält Software unter [MIT-Lizenz][MIT] und Content unter [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa]. Content sind insbesondere die Erklärungstexte der Animation. Ausgenommen von der CC BY-SA 4.0 Lizenz sind die verwendeten Logos sowie alle anders lizenzierten Inhalte.
+BTree Animate Touch ist eine von Charlotte Hasler für den Touchscreen angepasste Version von [BTree Animate]. BTree-Animate basiert auf dem B-Baum-Zeichner [BTree] der [Technischen Hochschule Köln][TH Köln]. Jonas Baur entwickelte in seiner Bachelor-Arbeit an der [Hochschule Düsseldorf][HSD] die animierte und mit Erklärungen versehene Darstellung zum Ablauf [BTree Animate]. Im Projekt [EILD.nrw] entwickelte Charlotte Hasler die Arbeit weiter. Dieses Repository enthält Software unter [MIT-Lizenz][MIT] und Content unter [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa]. Content sind insbesondere die Erklärungstexte der Animation. Ausgenommen von der CC BY-SA 4.0 Lizenz sind die verwendeten Logos sowie alle anders lizenzierten Inhalte.
 
 [![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
 
 ![image](https://user-images.githubusercontent.com/73349129/233968870-b61f0850-e7c2-489f-a597-53e030794b22.png)
 
 
-[MIT]: https://github.com/EILD-nrw/btree-animate-touch/blob/master/LICENCE
+[MIT]: https://github.com/orca-nrw/btree-animate-touch/blob/master/LICENCE
 [MIT-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
 [cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
 [cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
@@ -42,3 +43,5 @@ BTree Animate Touch ist eine von Charlotte Hasler für den Touchscreen angepasst
 [BTree Animate Touch GH Pages]: https://eild-nrw.github.io/btree-animate-touch/
 [EILD.nrw]: https://www.eild.nrw/
 [EILD.nrw GitHub]: https://github.com/EILD-nrw
+[ORCA.nrw]: https://www.orca.nrw/
+[ORCA.nrw Github]: https://github.com/orca-nrw
