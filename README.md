@@ -39,7 +39,7 @@ BTree Animate Touch ist eine von Charlotte Hasler für den Touchscreen angepasst
 [TH Köln]: https://www.th-koeln.de/
 [BTree]: https://github.com/orca-nrw/b-tree
 [BTree Animate]: https://github.com/orca-nrw/btree-animate
-[BTree Animate GH Pages]: https://eild-nrw.github.io/btree-animate/
+[BTree Animate GH Pages]: https://orca-nrw.github.io/btree-animate/
 [BTree Animate Touch GH Pages]: https://eild-nrw.github.io/btree-animate-touch/
 [EILD.nrw]: https://www.eild.nrw/
 [EILD.nrw GitHub]: https://github.com/EILD-nrw
