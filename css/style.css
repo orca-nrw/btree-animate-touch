@@ -37,9 +37,34 @@ body{
 	color: #fff;
 }
 
-.form-radio{
-	margin-top: 0.5em;
+.tree-type{ grid-area: tree-type}
 
+.input-type{ grid-area: input-type}
+
+.change-button{grid-area: change-button}
+
+
+.grid-container {
+	display: grid;
+	grid-template-areas:
+	'tree-type tree-type change-button'
+	'input-type input-type change-button';
+	gap: 10px;
+	background-color: #98c1d5;
+	padding:0.5em 0.5em;
+	margin-top:0.5em;
+	margin-bottom: 0.5em;
+	margin-right: 0.5em;
+	border: 2px solid black;
+	border-radius: 3px;
+
+}
+
+.button-container {
+	grid-column: 2; /* Platziert die Button-Container in der zweiten Spalte */
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .form-animation{
@@ -112,11 +137,8 @@ button{
 	font-size: 25px;
 }
 
-#treeInputInsert {
-	padding:10px 15px;
-	background-color: #98c1d5;
-	border: 2px solid black;
-	border-radius: 3px;
+#changeType {
+	margin-left: 0; /* Reset left margin to align with the radio groups */
 }
 
 canvas {
