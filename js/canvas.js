@@ -52,6 +52,7 @@ animationSpeedSlider.value = 7;
 let speed = 7;
 let pause = false;
 deactivateButton(animationPauseButton);
+deactivateButton(changeTypeButton);
 let animationId = null;
 let oldTree = [];
 let tempTree = [];
@@ -209,6 +210,18 @@ resetButton.addEventListener('click', function(){
 	}
 });
 
+radiosTreeType.forEach(radioButton => {
+	radioButton.addEventListener('change', function() {
+		activateButton(changeTypeButton);
+	});
+});
+
+radiosInputType.forEach(radioButton => {
+	radioButton.addEventListener('change', function() {
+		activateButton(changeTypeButton);
+	});
+});
+
 changeTypeButton.addEventListener('click', function(){
 	if (confirm("Um den Typ zu ändern, wird der aktuelle Baum gelöscht.")){
 		for (const radioButton of radiosTreeType) {
@@ -225,6 +238,7 @@ changeTypeButton.addEventListener('click', function(){
 				break;
 			}
 		}
+		deactivateButton(changeTypeButton);
 	}
 });
 
