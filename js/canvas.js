@@ -15,8 +15,13 @@ let drawTreeFromUploadButton = document.getElementById('drawFromFile');
 let animationTooltip = document.getElementById('tooltipAnimation');
 
 // set up canvas
-let canvas = document.querySelector('canvas');
-canvas.style.backgroundColor = 'white';
+/*let canvas = document.querySelector('canvas');
+canvas.style.backgroundColor = 'yellow';
+ */
+
+// set up canvas
+let canvas = document.getElementById('myCanvas');
+let container = document.getElementById('canvas-container');
 canvas.height = window.innerHeight - 315 - 250;
 canvas.width = window.innerWidth - 60;
 let c = canvas.getContext('2d');
@@ -1675,6 +1680,7 @@ function getBTree(yValue){
 	}
 }
 
+/*
 function calculateWrapTextAndDraw(text, x, y, width, lineHeight, fillStyle) {
 	c.clearRect(11, 11, width, explanationBoxHeight);
 	c.font = "35px Roboto";
@@ -1703,6 +1709,15 @@ function calculateWrapTextAndDraw(text, x, y, width, lineHeight, fillStyle) {
 	}
 
 	c.fillText(line, x, y);
+}
+ */
+
+
+function calculateWrapTextAndDraw(text, x, y, width, lineHeight, fillStyle) {
+	c.font = "35px Roboto";
+	c.fillStyle = pastelBlue;
+	c.fillStyle = fillStyle;
+	document.getElementById('explanation-text').innerHTML = text;
 }
 
 function calculateExplanationBoxWidth(){
@@ -1737,6 +1752,10 @@ function resizeCanvas(){
 
 		drawTree(drawnTree);
 	}
+}
+
+function updateExplanationText(newText) {
+	explanationText = newText;
 }
 
 function initDraw(){
