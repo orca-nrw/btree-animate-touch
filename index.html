@@ -1,87 +1,100 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="utf-8">
-    <title>B-Baum-Animation</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header class="main-header">
-    <span id="btreeInformation">
-        Eine Weiterentwicklung des B-Baum-Zeichners der TH Köln <br>
-        V.05-2022
-    </span>
-    <h1>B-Baum-Animation</h1>
-</header>
-<div class="form" id="firstRowInput">
-    <div>
-        <div class="form-inputs">
-            <button type="button" id="submitInsert">Zufälligen Wert Einfügen</button>
-            <button type="button" id="submitDelete">Zufälligen Wert Löschen</button>
-            <button type="button" id="animationPause">||</button>
-            <button type="button" id="submitUndo">Rückgängig</button>
-            <button type="button" id="submitReset">Baum löschen</button>
-            <button type="button" id="helpButton">Weitere Informationen</button>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>B-Baum-Animation</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="control">
+            <header class="main-header">
+                <span id="btreeInformation">
+                    Eine Weiterentwicklung des B-Baum-Zeichners der TH Köln <br>
+                    V.05-2022
+                </span>
+                <h1>B-Baum-Animation</h1>
+            </header>
+            <div class="form" id="firstRowInput">
+                <div>
+                    <div class="form-inputs">
+                        <button type="button" id="submitInsert">Zufälligen Wert Einfügen</button>
+                        <button type="button" id="submitDelete">Zufälligen Wert Löschen</button>
+                        <button type="button" id="animationPause">||</button>
+                        <button type="button" id="submitUndo">Rückgängig</button>
+                        <button type="button" id="submitReset">Baum löschen</button>
+                        <button type="button" id="helpButton">Weitere Informationen</button>
+                    </div>
+                    <div class="form-animation">
+                        <div id="sliderDiv">
+                            <label id="animationsgeschwindigkeit" for="animationCheckbox">Animation: an</label>
+                            <input type="checkbox" class="checkbox" id="animationCheckbox" checked>
+                            <label for="animationsgeschwindigkeitslider"></label>
+                            <input class="slider" type="range" min="1" max="13" value="7" step="2" id="animationsgeschwindigkeitslider">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <form class="radio-grid-container">
+                        <div class="tree-type">
+                            <label style="font-weight: bold">Typ des Baumes:</label>
+                            <input type="radio" id="treeType1" checked="checked" value="1" name="treeType">
+                            <label for="treeType1">1</label>
+                            <input type="radio" id="treeType2" value="2" name="treeType">
+                            <label for="treeType2">2</label>
+                            <input type="radio" id="treeType3" value="3" name="treeType">
+                            <label for="treeType3">3</label>
+                            <input type="radio" id="treeType4" value="4" name="treeType">
+                            <label for="treeType4">4</label>
+                            <input type="radio" id="treeType5" value="5" name="treeType">
+                            <label for="treeType5">5</label>
+                        </div>
+                        <div class="input-type">
+                            <label style="font-weight: bold">Eingabewerte:</label>
+                            <input type="radio" id="inputTypeNumbers" checked="checked" value="number" name="inputType">
+                            <label for="inputTypeNumbers">Zahlen</label>
+                            <input type="radio" id="inputTypeLetters" value="letter" name="inputType">
+                            <label for="inputTypeLetters">Buchstaben</label>
+                        </div>
+                        <div class="change-button">
+                            <button type="button" id="changeType">Ändern</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <form class="form-radio">
-            <label for="treeInputInsert"></label>
-            <label style="font-weight: bold">Typ des Baumes:</label>
-            <input type="radio" id="treeType1" checked="checked" value="1" name="treeType">
-            <label for="treeType1">1</label>
-            <input type="radio" id="treeType2" value="2" name="treeType">
-            <label for="treeType2">2</label>
-            <input type="radio" id="treeType3" value="3" name="treeType">
-            <label for="treeType3">3</label>
-            <input type="radio" id="treeType4" value="4" name="treeType">
-            <label for="treeType4">4</label>
-            <input type="radio" id="treeType5" value="5" name="treeType">
-            <label for="treeType5">5</label><br>
-            <label style="font-weight: bold">Eingabewerte:</label>
-            <input type="radio" id="inputTypeNumbers" checked="checked" value="number" name="inputType">
-            <label for="inputTypeNumbers">Zahlen</label>
-            <input type="radio" id="inputTypeLetters" value="letter" name="inputType">
-            <label for="inputTypeLetters">Buchstaben</label>
-            <button type="button" id="changeType" style="margin-left: 10px">Ändern</button>
-        </form>
-    </div>
-    <div class="form-animation">
-
-        <div id="sliderDiv">
-
-                <input type="checkbox" class="checkbox" id="animationCheckbox" checked>
-                <label id="animationsgeschwindigkeit" for="animationCheckbox">Animation: an</label>
-
-                <input class="slider" type="range" min="1" max="13" value="7" step="2" id="animationsgeschwindigkeitslider">
+        <div class="content">
+            <div class="container">
+                <div id="explanation-container">
+                    <p id="explanation-text">Platzhalter</p>
+                </div>
+                <div id="canvas-container">
+                    <canvas id="myCanvas"></canvas>
+                </div>
+            </div>
+            <script src="js/btree.js"></script>
+            <script src="js/canvas.js"></script>
         </div>
-
-    </div>
-
-</div>
-
-<canvas id="canvaswindow"></canvas>
-<script src="js/btree.js"></script>
-<script src="js/canvas.js"></script>
-<table>
-    <tr><td>
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-            <img alt="Creative Commons License" style="border-width:0; height: 100px" src="logos/licence-logo.png" />
-        </a><br>
-        This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
-    </td>
-    <td>
-        <img src="logos/EILD-Logo.png" alt="EILD-Logo"/>
-    </td>
-    <td>
-        <img src="logos/eBusiness-Logo.png" alt="eBusiness-Logo" />
-    </td>
-    <td>
-        <img src="logos/HSD-Logo.jpeg" alt="HSD-Logo"/>
-    </td>
-    <td>
-        <img src="logos/DH-NRW-Logos.png" alt="DH-NRW-Logo" style="float:right" />
-    </td>
-    </tr>
-
-</table>
-</body>
+        <table class="footer">
+            <tr><td>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                    <img alt="Creative Commons License" style="border-width:0; height: 100px" src="logos/licence-logo.png" />
+                </a><br>
+                This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+            </td>
+                <td>
+                    <img src="logos/EILD-Logo.png" alt="EILD-Logo"/>
+                </td>
+                <td>
+                    <img src="logos/eBusiness-Logo.png" alt="eBusiness-Logo" />
+                </td>
+                <td>
+                    <img src="logos/HSD-Logo.jpeg" alt="HSD-Logo"/>
+                </td>
+                <td>
+                    <img src="logos/DH-NRW-Logos.png" alt="DH-NRW-Logo" style="float:right" />
+                </td>
+            </tr>
+        </table>
+    </body>
 </html>
