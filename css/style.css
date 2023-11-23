@@ -8,7 +8,6 @@
 }
 
 html {
-	background-color: #006699;
 	font-family: Roboto, sans-serif;
 }
 
@@ -21,10 +20,10 @@ body{
 }
 
 .main-header{
+	color: #fff;
 	background-color: #00324c;
-	color: #f1f2f6;
 	padding: 1px;
-	border-bottom: 8px solid black;
+	border-bottom: 8px solid #98c1d5;
 }
 
 .main-header h1{
@@ -36,6 +35,8 @@ body{
 	position: sticky;
 	top: 0;
 	z-index: 1000;
+	border-bottom: 8px solid #98c1d5;
+	background-color: #fff;
 }
 
 .content {
@@ -67,23 +68,16 @@ body{
 .radio-grid-container {
 	display: grid;
 	grid-template-areas:
-	'tree-type tree-type change-button'
-	'input-type input-type change-button';
+	'tree-type change-button'
+	'input-type change-button';
+	color: #00324c;
 	gap: 10px;
-	background-color: #98c1d5;
+	background-color: rgba(201,231,242,0.3);
 	padding:0.5em 0.5em;
 	margin-top:0.5em;
 	margin-bottom: 0.5em;
-	margin-right: 0.5em;
-	border: 2px solid black;
+	border: 2px solid #00324c;
 	border-radius: 3px;
-}
-
-.button-container {
-	grid-column: 2; /* Platziert die Button-Container in der zweiten Spalte */
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 .container{
@@ -108,8 +102,8 @@ body{
 	box-sizing: border-box;
 	overflow-y: auto;
 	overflow-wrap: break-word;
-	border: 0.1em solid darkblue;
-	background-color: #98c1d5;
+	border: 0.1em solid #00324c;
+	background-color: rgba(201,231,242,0.3);
 }
 
 .form-animation{
@@ -130,7 +124,7 @@ input[type="text"]{
 	-webkit-appearance: none;
 	width: 100%;
 	height: 60px;
-	background: #98c1d5;
+	background: #C9E7F2;
 	outline: 5px solid black;
 	border-radius: 3px;
 	-webkit-transition: .2s;
@@ -155,7 +149,7 @@ img {
 	margin-top: 10px;
 	text-align: right;
 	margin-right: 10px;
-	color: #006699;
+	color: white;
 }
 .slider::-webkit-slider-thumb {
 	-webkit-appearance: none;
@@ -204,7 +198,7 @@ canvas {
 
 #animationsgeschwindigkeit{
 	display: inline-block;
-	color: #fff;
+	color: #00324c;
 	font-weight: bold;
 }
 
@@ -231,7 +225,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .modal-content {
-	background-color: #98c1d5;
+	background-color: #eef4f7;
 	margin: 15% auto;
 	padding: 20px;
 	border: 2px solid black;
