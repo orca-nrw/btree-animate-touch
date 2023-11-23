@@ -12,7 +12,7 @@ let helpButton = document.getElementById("helpButton");
 let animationsgeschwindigkeit = document.getElementById("animationsgeschwindigkeit");
 let animationCheckbox = document.getElementById("animationCheckbox");
 let drawTreeFromUploadButton = document.getElementById('drawFromFile');
-let animationTooltip = document.getElementById('tooltipAnimation');
+//let animationTooltip = document.getElementById('tooltipAnimation');
 
 // set up canvas
 /*let canvas = document.querySelector('canvas');
@@ -276,11 +276,11 @@ animationCheckbox.addEventListener("change", function(){
 		explanationText = expAnimationDeactivated;
 		animationsgeschwindigkeit.innerHTML = "Animation: aus";
 		animationSpeedSlider.disabled = true;
-		animationTooltip.innerHTML = "Animation aktivieren";
+		//animationTooltip.innerHTML = "Animation aktivieren";
 	} else {
 		animationsgeschwindigkeit.innerHTML = "Animation: an";
 		animationSpeedSlider.disabled = false;
-		animationTooltip.innerHTML = "Animation deaktivieren";
+		//animationTooltip.innerHTML = "Animation deaktivieren";
 	}
 });
 
@@ -1493,6 +1493,7 @@ function resetTree(){
 	tempTree = [];
 	tree = new Tree(treeType);
 	isNumberTree = null;
+	changeButtonsToStart();
 }
 
 function checkIfTreeIsDrawnCompletely(tree){
