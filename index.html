@@ -25,39 +25,41 @@
                         <button type="button" id="submitReset">Baum löschen</button>
                         <button type="button" id="helpButton">Weitere Informationen</button>
                     </div>
-                        <form class="radio-grid-container">
-                             <div class="tree-type">
-                                <label style="font-weight: bold">Typ des Baumes:</label>
-                                <input type="radio" id="treeType1" checked="checked" value="1" name="treeType">
-                                <label for="treeType1">1</label>
-                                <input type="radio" id="treeType2" value="2" name="treeType">
-                                <label for="treeType2">2</label>
-                                <input type="radio" id="treeType3" value="3" name="treeType">
-                                <label for="treeType3">3</label>
-                                <input type="radio" id="treeType4" value="4" name="treeType">
-                                <label for="treeType4">4</label>
-                                <input type="radio" id="treeType5" value="5" name="treeType">
-                                <label for="treeType5">5</label>
-                            </div>
-                            <div class="input-type">
-                                <label style="font-weight: bold">Eingabewerte:</label>
-                                <input type="radio" id="inputTypeNumbers" checked="checked" value="number" name="inputType">
-                                <label for="inputTypeNumbers">Zahlen</label>
-                                <input type="radio" id="inputTypeLetters" value="letter" name="inputType">
-                                <label for="inputTypeLetters">Buchstaben</label>
-                            </div>
-                            <div class="change-button">
-                                <button type="button" id="changeType">Ändern</button>
-                            </div>
-                        </form>
-                </div>
-                <div class="form-animation">
-                    <div id="sliderDiv">
-                        <label id="animationsgeschwindigkeit" for="animationCheckbox">Animation: an</label>
-                        <input type="checkbox" class="checkbox" id="animationCheckbox" checked>
-                        <label for="animationsgeschwindigkeitslider"></label>
-                        <input class="slider" type="range" min="1" max="13" value="7" step="2" id="animationsgeschwindigkeitslider">
+                    <div class="form-animation">
+                        <div id="sliderDiv">
+                            <label id="animationsgeschwindigkeit" for="animationCheckbox">Animation: an</label>
+                            <input type="checkbox" class="checkbox" id="animationCheckbox" checked>
+                            <label for="animationsgeschwindigkeitslider"></label>
+                            <input class="slider" type="range" min="1" max="13" value="7" step="2" id="animationsgeschwindigkeitslider">
+                        </div>
                     </div>
+                </div>
+                <div>
+                    <form class="radio-grid-container">
+                        <div class="tree-type">
+                            <label style="font-weight: bold">Typ des Baumes:</label>
+                            <input type="radio" id="treeType1" checked="checked" value="1" name="treeType">
+                            <label for="treeType1">1</label>
+                            <input type="radio" id="treeType2" value="2" name="treeType">
+                            <label for="treeType2">2</label>
+                            <input type="radio" id="treeType3" value="3" name="treeType">
+                            <label for="treeType3">3</label>
+                            <input type="radio" id="treeType4" value="4" name="treeType">
+                            <label for="treeType4">4</label>
+                            <input type="radio" id="treeType5" value="5" name="treeType">
+                            <label for="treeType5">5</label>
+                        </div>
+                        <div class="input-type">
+                            <label style="font-weight: bold">Eingabewerte:</label>
+                            <input type="radio" id="inputTypeNumbers" checked="checked" value="number" name="inputType">
+                            <label for="inputTypeNumbers">Zahlen</label>
+                            <input type="radio" id="inputTypeLetters" value="letter" name="inputType">
+                            <label for="inputTypeLetters">Buchstaben</label>
+                        </div>
+                        <div class="change-button">
+                            <button type="button" id="changeType">Ändern</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
